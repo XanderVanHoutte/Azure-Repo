@@ -26,7 +26,7 @@ namespace Howest.MCT.Functions
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
                 await sqlConnection.OpenAsync();
 
-                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM VisitorsData WHERE DagVanDeWeek = @day", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM VisitorData WHERE DagVanDeWeek = @day", sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@day", day);
 
                 SqlDataReader sqlDataReader = await sqlCommand.ExecuteReaderAsync();
